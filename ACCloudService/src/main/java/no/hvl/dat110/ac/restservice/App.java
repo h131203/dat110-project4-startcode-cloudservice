@@ -52,7 +52,7 @@ public class App {
 			Gson gson = new Gson();
 			AccessEntry entry = gson.fromJson(req.body(), AccessEntry.class); //bodyen til HTTP POST er en JSON reprensentasjon av AccesnEntry klassen obj
 			
-			//må se på denne? (printer tallet cid føst i loggen?)
+			
 			int id = accesslog.add(entry.getMessage()); //.add returnerer IDen på meldingen som ble lagt til i loggen
 			res.body(gson.toJson(accesslog.get(id))); //
 			
@@ -63,12 +63,12 @@ public class App {
 		//henter ut hele loggen
 		get("/accessdevice/log", (req, res) -> {
 			
-			//MÅ MULIGENS HA EN LØKKE HER ELLER I METODEN? Nei :)
-			
+						
 			Gson gson = new Gson();
-			return gson.toJson(accesslog.toJson());		//toJson() metoden som definer i tidligere del. Usikker på om den funker?
+			return gson.toJson(accesslog.toJson());	
 		});
 		
+	
 		//henter ut et gitt element i loggen basert på ID
 		get("/accessdevice/log/:id", (req, res) -> {
 			
