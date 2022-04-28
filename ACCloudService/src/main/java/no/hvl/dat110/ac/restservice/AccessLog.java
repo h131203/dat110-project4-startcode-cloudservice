@@ -50,41 +50,14 @@ public class AccessLog {
 	// TODO: return JSON representation of the access log
 	public String toJson () {
 		/*
+		 * Formatet. Til egen bruk
 		 * 
 		 * {
 			   "id": 1,
 			   "message": "locked"
 			}
 		 */
-		
-		//MÅ SJEKKES OM FUNKER!
-    	
-//		Gson gson = new Gson();
-//		
-//		String json = gson.toJson(this);
-//		
-//		int numberOfLogEntries = cid.get();
-		
-//		for (int i = 0; i < numberOfLogEntries; i++) {
-//			
-//			
-//		}
-		
-		//VURDERE EN ANNEN VARIANT!
-//		String json = null;
-//		json = "[";
-//		int value = cid.get();
-//		for (int i = 0; i < value; i++) {
-//			json +="{";
-//			json += "\"id\": "+i+",";
-//			json += "\"message\": \"" + log.get(i).getMessage() + "\"";
-//			json +="}";
-//			if (i != value - 1) {
-//				json +=",";
-//			}
-//		}
-//		json += "]";
-//    	
+   	
 		Gson gson = new Gson();
 		String json = gson.toJson(this);
     	return json;

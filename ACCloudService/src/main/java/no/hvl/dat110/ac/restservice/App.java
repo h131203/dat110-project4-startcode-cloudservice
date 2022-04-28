@@ -81,7 +81,7 @@ public class App {
 			//LEGGE INN SJEKK OM LOCKED ELLER IKKE?
 		});
 		
-		//Sletter logen
+		//Sletter loggen
 		
 		delete("/accessdevice/log", (req, res) -> {
 			accesslog.clear();
